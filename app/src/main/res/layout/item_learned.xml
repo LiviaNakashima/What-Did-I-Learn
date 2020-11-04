@@ -7,18 +7,18 @@
     android:padding="@dimen/container_padding">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_itemTitle"
         android:padding="@dimen/text_padding"
         tools:text="Kotlin - Null Safety"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/tv_itemDescription"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout" />
+        app:layout_constraintStart_toEndOf="@+id/ll_itemLevel" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_itemDescription"
         android:padding="@dimen/text_padding"
         tools:text="O sistema de tipos de Kotlin visa eliminar o perigo de referências nulas do código"
         android:layout_width="0dp"
@@ -26,18 +26,18 @@
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/ll_itemLevel"
+        app:layout_constraintTop_toBottomOf="@+id/tv_itemTitle"
         tools:layout_editor_absoluteY="152dp" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/ll_itemLevel"
         android:layout_width="50dp"
         android:layout_height="0dp"
         android:background="#FF0000"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_itemDescription"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/tv_itemTitle"
         app:layout_constraintVertical_bias="0.524" />
 </androidx.constraintlayout.widget.ConstraintLayout>
