@@ -52,11 +52,11 @@ abstract class DatabaseItems : RoomDatabase() {
             val itemThree = ItemLearned(
                 "Git", "É um sistema de controle de versão " +
                         "distribuído. Com ele é possível rastrear mudanças no código-fonte durante o " +
-                        "desenvolvimento de software.", Level.MEDIUM
+                        "desenvolvimento de software.", Level.LOW
             )
 
             val itemFour = ItemLearned(
-                "GruopView", "É uma view especial que pode conter" +
+                "GroupView", "É uma view especial que pode conter" +
                         " outras views (chamadas de filhos).É a classe base para layouts e contêineres de " +
                         "views.", Level.HIGH
             )
@@ -94,9 +94,9 @@ abstract class DatabaseItems : RoomDatabase() {
             )
 
             val itemFour = ItemLearned(
-                "GruopView", "É uma view especial que pode conter" +
+                "GroupView", "É uma view especial que pode conter" +
                         " outras views (chamadas de filhos).É a classe base para layouts e contêineres de " +
-                        "views.", Level.HIGH
+                        "views.", Level.LOW
             )
 
             dao.insert(itemOne)
