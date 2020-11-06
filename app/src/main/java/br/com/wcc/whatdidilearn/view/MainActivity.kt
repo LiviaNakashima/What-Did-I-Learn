@@ -2,7 +2,6 @@ package br.com.wcc.whatdidilearn.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             adapter.data = items
         })
 
-        binding.floatingActionButton.setOnClickListener {
+        binding.fab.setOnClickListener {
             val novaTela = Intent(this, NewLearnedItem::class.java)
             startActivity(novaTela)
         }
