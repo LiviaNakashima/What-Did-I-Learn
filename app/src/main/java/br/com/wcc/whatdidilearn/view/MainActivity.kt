@@ -33,11 +33,16 @@ class MainActivity : AppCompatActivity() {
         itemsList.observe(this, Observer { items ->
             adapter.data = items
         })
+
+        binding.floatingActionButton.setOnClickListener {
+            val novaTela = Intent(this, NewLearnedItem::class.java)
+            startActivity(novaTela)
+        }
     }
 
-    fun irTelaNova(componente:View){
-        val novaTela = Intent(this, NewLearnedItem::class.java)
-
-        startActivity(novaTela)
-    }
+//    fun irTelaNova(componente:View){
+//        val novaTela = Intent(this, NewLearnedItem::class.java)
+//
+//        startActivity(novaTela)
+//    }
 }

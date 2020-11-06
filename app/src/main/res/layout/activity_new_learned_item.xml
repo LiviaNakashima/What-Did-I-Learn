@@ -8,17 +8,17 @@
     tools:context=".view.NewLearnedItem">
 
     <TextView
+        android:id="@+id/tv_topo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Item title:"
-        android:textSize="24sp"
-        android:id="@+id/tv_topo"/>
+        android:textSize="24sp" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/et_textoItem"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:id="@+id/et_textoItem"/>
+        android:textSize="24sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,4 +26,18 @@
         android:textSize="24sp"
         android:text="Item Description"
         android:id="@+id/tv_description"/>
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/et_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/bt_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:textSize="24sp"
+        android:layout_marginLeft="280dp"/>
 </LinearLayout>
