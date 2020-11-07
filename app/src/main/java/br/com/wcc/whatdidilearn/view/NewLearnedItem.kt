@@ -7,23 +7,25 @@ import androidx.lifecycle.ViewModelProvider
 import br.com.wcc.whatdidilearn.R
 import br.com.wcc.whatdidilearn.data.DatabaseItems
 import br.com.wcc.whatdidilearn.databinding.ActivityNewLearnedItemBinding
+import br.com.wcc.whatdidilearn.repository.LearnedItemsRepository
 import br.com.wcc.whatdidilearn.viewmodel.NewLearnedItemViewModel
 import br.com.wcc.whatdidilearn.viewmodel.NewLearnedItemViewModelFactory
-import kotlinx.android.synthetic.main.activity_new_learned_item.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 
 class NewLearnedItem : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_learned_item)
         val binding = ActivityNewLearnedItemBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
-        val database = DatabaseItems.getDatabase(this, CoroutineScope(Dispatchers.IO))
-        val dao = database.learnedItemDao()
-        val viewModelFactory = NewLearnedItemViewModelFactory(dao)
-        val viewModel = ViewModelProvider(this, viewModelFactory)
-            .get(NewLearnedItemViewModel::class.java)
+
+        supportActionBar?.title = "New Learned Item"
+
+        val dao = DatabaseItems.getDatabase(this, CoroutineScope(Dispatchers.IO)).learnedItemDao()
+        val repository = LearnedItemsRepository(dao)
+        val viewModelFactory = NewLearnedItemViewModelFactory(repository)
+        val viewModel = ViewModelProvider(this, viewModelFactory).get(NewLearnedItemViewModel::class.java)
 
         binding.btSave.setOnClickListener {
             when {
