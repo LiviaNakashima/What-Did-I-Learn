@@ -1,7 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">What Did I Learn</string>
     <string name="item_title_text">Item title:</string>
-    <string name="item_description_text">Item Description:</string>
+    <string name="item_description_text">Item Description</string>
     <string name="bt_save_text">Save</string>
     <string name="understanding_level_text">Understanding Level:</string>
 </resources>

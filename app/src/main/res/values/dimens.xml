@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="container_padding">24dp</dimen>
+    <dimen name="container_padding">15dp</dimen>
     <dimen name="text_padding">8dp</dimen>
+    <dimen name="text_size">30sp</dimen>
+    <dimen name="text_size_rv">15sp</dimen>
 </resources>

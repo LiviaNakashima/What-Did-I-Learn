@@ -5,39 +5,83 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.NewLearnedItem">
+    tools:context=".view.NewLearnedItem"
+    style="@style/BackgroundTheme">
 
     <TextView
         android:id="@+id/tv_topo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Item title:"
-        android:textSize="24sp" />
+        android:text="@string/item_title_text"
+        style="@style/TextView"/>
 
     <EditText
         android:id="@+id/et_textoItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:inputType="text"
+        style="@style/EditTextStyle" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="Item Description"
-        android:id="@+id/tv_description"/>
+        android:id="@+id/tv_description"
+        android:text="@string/item_description_text"
+        style="@style/TextView"/>
 
-    <MultiAutoCompleteTextView
+    <EditText
         android:id="@+id/et_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp" />
+        style="@style/EditTextStyle"
+        android:inputType="textMultiLine"/>
+
+    <TextView
+        android:id="@+id/tv_understandingLevel"
+        android:text="@string/understanding_level_text"
+        style="@style/TextView"/>
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="Alto" />
+
+        <RadioButton
+            android:id="@+id/radio_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="Médio" />
+
+        <RadioButton
+            android:id="@+id/radio_low"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Baixo" />
+    </RadioGroup>
+
 
     <Button
         android:id="@+id/bt_save"
-        android:layout_width="wrap_content"
+        android:layout_width="96dp"
         android:layout_height="wrap_content"
-        android:text="Salvar"
-        android:textSize="24sp"
-        android:layout_marginLeft="280dp"/>
+        android:layout_gravity="end"
+        android:text="@string/bt_save_text"
+        android:layout_marginTop="30dp"
+        android:textSize="24sp" />
 </LinearLayout>

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import br.com.wcc.whatdidilearn.R
 import br.com.wcc.whatdidilearn.data.DatabaseItems
 import br.com.wcc.whatdidilearn.databinding.ActivityNewLearnedItemBinding
 import br.com.wcc.whatdidilearn.repository.LearnedItemsRepository

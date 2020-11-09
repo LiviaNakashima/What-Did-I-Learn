@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             adapter.data = it
         })
 
-        binding.fab.setOnClickListener {
+        binding.btFab.setOnClickListener {
             val intent = Intent(this, NewLearnedItem::class.java)
             startActivity(intent)
         }
