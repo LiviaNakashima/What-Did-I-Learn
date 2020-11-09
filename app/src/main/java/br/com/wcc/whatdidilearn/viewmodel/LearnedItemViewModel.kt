@@ -9,15 +9,15 @@ import br.com.wcc.whatdidilearn.repository.LearnedItemsRepository
 import kotlinx.coroutines.launch
 
 class LearnedItemViewModel(private var repository: LearnedItemsRepository) : ViewModel() {
-    val learnedItems: LiveData<List<ItemLearned>>
+    val learnedItems: LiveData<MutableList<ItemLearned>>
 
     init {
         learnedItems = repository.learnedItems
     }
 
-    fun insertNewLearnedItem(item: ItemLearned) {
+    fun deleteLearnedItem(item: ItemLearned) {
         viewModelScope.launch {
-            repository.insertNewLearnedItem(item)
+            repository.deleteLearnedItem(item)
         }
     }
 

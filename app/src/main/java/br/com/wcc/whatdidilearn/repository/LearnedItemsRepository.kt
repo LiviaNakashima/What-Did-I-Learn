@@ -10,4 +10,8 @@ class LearnedItemsRepository(private val dao: ItemLearnedDao) {
     suspend fun insertNewLearnedItem(item: ItemLearned) {
         dao.insert(item)
     }
+
+    suspend fun deleteLearnedItem(item: ItemLearned) {
+        dao.delete(item)
+    }
 }

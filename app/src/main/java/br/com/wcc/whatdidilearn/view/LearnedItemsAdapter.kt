@@ -3,22 +3,26 @@ package br.com.wcc.whatdidilearn.view
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.wcc.whatdidilearn.R
 import br.com.wcc.whatdidilearn.entities.ItemLearned
 
 class LearnedItemsAdapter: RecyclerView.Adapter<LearnedItemsAdapter.LearnedItemViewHolder>() {
-    var data = listOf<ItemLearned>()
+    var data = mutableListOf<ItemLearned>()
         set(value){
             field = value
             notifyDataSetChanged()
         }
 
+    var removedItem : ItemLearned ? = null
+
     inner class LearnedItemViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val titleItem: TextView = itemView.findViewById(R.id.tv_itemTitle)
         val descriptionItem: TextView = itemView.findViewById(R.id.tv_itemDescription)
         val levelItem: View = itemView.findViewById(R.id.ll_itemLevel)
+        val buttonDelete: Button = itemView.findViewById(R.id.bt_delete)
 
         fun bind(title: String, description: String, color: Int){
             titleItem.text = title
@@ -38,8 +42,21 @@ class LearnedItemsAdapter: RecyclerView.Adapter<LearnedItemsAdapter.LearnedItemV
     }
 
     override fun onBindViewHolder(holder: LearnedItemViewHolder, position: Int) {
-        val itemLernedToShow: ItemLearned = data.get(position)
-        holder.bind(itemLernedToShow.title, itemLernedToShow.description, itemLernedToShow.understandingLevel.color)
+        val itemLearnedToShow: ItemLearned = data.get(position)
+        holder.bind(itemLearnedToShow.title, itemLearnedToShow.description, itemLearnedToShow.understandingLevel.color)
 
+        holder.buttonDelete.setOnClickListener {
+            deleteItem(itemLearnedToShow)
+        }
+
+    }
+    fun deleteItem(item: ItemLearned) {
+        data.remove(item)
+        removedItem = item
+        notifyDataSetChanged()
+    }
+
+    fun getRemoveItemPosition() : ItemLearned? {
+        return removedItem;
     }
 }
