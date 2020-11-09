@@ -14,7 +14,7 @@ class NewLearnedItemViewModel(private var repository: LearnedItemsRepository): V
 
     fun insertNewLearnedItem(itemTitle: String, itemDescription: String) {
         viewModelScope.launch {
-            val item = ItemLearned(itemTitle, itemDescription, Level.HIGH)
+            val item = ItemLearned(itemTitle, itemDescription, Level.)
             repository.insertNewLearnedItem(item)
         }
     }
